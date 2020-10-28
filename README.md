@@ -1,3 +1,3 @@
 # CS370MavenProject
 
-Authors: Jake Mismas
+Authors: Jake Mismas, Michael Webb
