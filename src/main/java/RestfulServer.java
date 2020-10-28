@@ -8,16 +8,16 @@ public class RestfulServer{
         this.processRestfulApiRequests();
     }
     private void configureRestfulApiServer(){
-        spark.port(8080);
+        Spark.port(8080);
         System.out.println("Server configured to listen on port 8080");
     }
 
     private void processRestfulApiRequests(){
-        spark.get("/", this::echoRequest);
+        Spark.get("/", this::echoRequest);
     }
 
-    private String echoRequest(Request request, Responce, responce){
-        responce.type("application/json");
+    private String echoRequest(Request request, Response response){
+        response.type("application/json");
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200);
 
@@ -39,8 +39,8 @@ public class RestfulServer{
                 + "\"pathInfo\":\"" + request.pathInfo() + "\",\n"
                 + "\"serverPort\":\"" + request.port() + "\",\n"
                 + "\"protocol\":\"" + request.protocol() + "\",\n"
-                + "\"queryParams\":‘"" + request.queryParams() + "\",\n"
-                + "\"requestMethod:\"' + request.requestMethod() + "\",\n"
+                + "\"queryParams\":\"" + request.queryParams() + "\",\n"
+                + "\"requestMethod:\":\"" + request.requestMethod() + "\",\n"
                 + "\"scheme\":\"" + request.scheme() + "\",\n"
                 + "\"servletPath\":\"" + request.servletPath() + "\",\n"
                 + "\"session\":\"" + request.session() + "\",\n"
