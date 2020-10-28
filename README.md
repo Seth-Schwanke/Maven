@@ -1,3 +1,9 @@
 # CS370MavenProject
 
-Authors: Jake Mismas, Michael Webb, Seth Schwanke
+Project Description:
+
+Usage:
+
+Docker:
+
+Authors: Jake Mismas, Michael Webb
