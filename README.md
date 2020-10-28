@@ -6,4 +6,4 @@ Usage:
 
 Docker:
 
-Authors: Jake Mismas, Michael Webb
+Authors: Jake Mismas, Michael Webb, Seth Schwanke
