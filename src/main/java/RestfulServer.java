@@ -2,6 +2,7 @@ import spark.Spark;
 import spark.Request;
 import spark.Response;
 
+<<<<<<< HEAD
 public class RestfulServer {
 
     public RestfulServer() {
@@ -34,6 +35,31 @@ public class RestfulServer {
 
     // Returns all properties of requests coming IN
     private String HttpRequestToJson(Request request) {
+=======
+public class RestfulServer{
+    public RestfulServer(){
+        this.configureRestfulApiServer();
+        this.processRestfulApiRequests();
+    }
+    private void configureRestfulApiServer(){
+        spark.port(8080);
+        System.out.println("Server configured to listen on port 8080");
+    }
+
+    private void processRestfulApiRequests(){
+        spark.get("/", this::echoRequest);
+    }
+
+    private String echoRequest(Request request, Responce, responce){
+        responce.type("application/json");
+        response.header("Access-Control-Allow-Origin", "*");
+        response.status(200);
+
+        return HttpRequestToJson(request);
+    }
+
+    private String HttpRequestToJson(Request request){
+>>>>>>> CS370MavenProject/master
         return "{\n"
                 + "\"attributes\":\"" + request.attributes() + "\",\n"
                 + "\"body\":\"" + request.body() + "\",\n"
@@ -46,14 +72,22 @@ public class RestfulServer {
                 + "\"ip\":\"" + request.ip() + "\",\n"
                 + "\"params\":\"" + request.params() + "\",\n"
                 + "\"pathInfo\":\"" + request.pathInfo() + "\",\n"
+<<<<<<< HEAD
                 + "\"serverport\":\"" + request.port() + "\",\n"
                 + "\"protocol\":\"" + request.protocol() + "\",\n"
                 + "\"queryParams\":\"" + request.queryParams() + "\",\n"
                 + "\"requestMethod\":\"" + request.requestMethod() + "\",\n"
+=======
+                + "\"serverPort\":\"" + request.port() + "\",\n"
+                + "\"protocol\":\"" + request.protocol() + "\",\n"
+                + "\"queryParams\":‘"" + request.queryParams() + "\",\n"
+                + "\"requestMethod:\"' + request.requestMethod() + "\",\n"
+>>>>>>> CS370MavenProject/master
                 + "\"scheme\":\"" + request.scheme() + "\",\n"
                 + "\"servletPath\":\"" + request.servletPath() + "\",\n"
                 + "\"session\":\"" + request.session() + "\",\n"
                 + "\"uri()\":\"" + request.uri() + "\",\n"
+<<<<<<< HEAD
                 + "\"url()\":\"" + request.url() + "\",\n"
                 + "\"userAgent\":\"" + request.userAgent() + "\",\n"
                 + "}";
@@ -64,3 +98,14 @@ public class RestfulServer {
         RestfulServer restfulServer = new RestfulServer(); // NEVER RETURNS!!
     }
 }
+=======
+                + "\"url()\":\""  + request.url() + "\",\n"
+                + "\"userAgent\":\""  + request.userAgent() + "\",\n"
+                + "}";
+    }
+    public static void main(String[] programArgs){
+        RestfulServer restfulServer= new RestfulServer();
+    }
+
+}
+>>>>>>> CS370MavenProject/master
