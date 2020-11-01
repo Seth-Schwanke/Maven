@@ -1,8 +1,12 @@
 import spark.Spark;
 import spark.Request;
 import spark.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RestfulServer{
+    private final Logger log = LoggerFactory.getLogger(RestfulServer.class);
+
     public RestfulServer(){
         this.configureRestfulApiServer();
         this.processRestfulApiRequests();
@@ -14,6 +18,9 @@ public class RestfulServer{
 
     private void processRestfulApiRequests(){
         Spark.get("/", this::echoRequest);
+        Spark.post("/body", this::echoRequest);//use this for sending things back
+
+        //use above to print out body
     }
 
     private String echoRequest(Request request, Response response){
