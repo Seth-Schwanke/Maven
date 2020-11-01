@@ -4,6 +4,7 @@ import spark.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class RestfulServer{
     private final Logger log = LoggerFactory.getLogger(RestfulServer.class);
 
@@ -18,16 +19,23 @@ public class RestfulServer{
 
     private void processRestfulApiRequests(){
         Spark.get("/", this::echoRequest);
-        Spark.post("/body", this::echoRequest);//use this for sending things back
-
+        Spark.post("/", this::echoRequest);//use this for sending things back
+        Spark.post("/test", this::testerino);
         //use above to print out body
     }
-
-    private String echoRequest(Request request, Response response){
+    String testerino(Request request, Response response){
+        response.type("/json");
+        response.header("Access-Control-Allow-Origin", "*");
+        response.status(200);
+        return testest(request);
+    }
+    private String testest(Request request){
+        return "this is the body ";
+    }
+     String echoRequest(Request request, Response response){
         response.type("application/json");
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200);
-
         return HttpRequestToJson(request);
     }
 
@@ -56,8 +64,10 @@ public class RestfulServer{
                 + "\"userAgent\":\""  + request.userAgent() + "\",\n"
                 + "}";
     }
+
     public static void main(String[] programArgs){
         RestfulServer restfulServer= new RestfulServer();
+
     }
 
 }
