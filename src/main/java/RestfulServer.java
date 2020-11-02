@@ -30,8 +30,9 @@ public class RestfulServer{
         return testest(request);
     }
     private String testest(Request request){
-        return "this is the body ";
+        return editBody(request.body());
     }
+
      String echoRequest(Request request, Response response){
         response.type("application/json");
         response.header("Access-Control-Allow-Origin", "*");
@@ -63,6 +64,10 @@ public class RestfulServer{
                 + "\"url()\":\""  + request.url() + "\",\n"
                 + "\"userAgent\":\""  + request.userAgent() + "\",\n"
                 + "}";
+    }
+
+    public String editBody(String body) {
+        return new StringBuilder(body).reverse().toString();
     }
 
     public static void main(String[] programArgs){
