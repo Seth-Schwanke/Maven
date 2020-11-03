@@ -2,8 +2,6 @@
 FROM ubuntu:latest
 #FROM openjdk:12-alpine
 
-COPY RestfulServer.java /RestfulServer.java
+COPY target/CS370MavenProject-*.jar /CS370MavenProject.jar
 
-# Compile
-RUN javac RestfulServer.java
-ENTRYPOINT java RestfulServer
+CMD ["java" , "-jar", "/CS370MavenProject.jar"]
