@@ -1,10 +1,9 @@
 # CS370MavenProject
 
+Authors: Jake Mismas, Michael Webb, Seth Schwanke
+
 Project Description:
 
-Located in Readme.txt
-
-Description:
 The purpose of this project is to demonstrate the advantages of a docker containerized smart home system, through the containerization of Google Assistant. Docker containers have some distinct advantages over virtual machines, from low resource overhead to fast start up times. This project aims to create a Google Assistant instance within a docker container that can be interacted with. More specifically, using Google Assistant API to respond to questions sent as requests. To add an additional layer of depth, each question and its answer will be logged, and then reused if the same question is asked. Please see the following flowchart:
 
 RestfulServer.class: Parses request body into a string, and sends string to BackEnd.class. ->
@@ -26,6 +25,3 @@ Project
 Docker:
 how to build docker image
 run image as container
-
-Authors: Jake Mismas, Michael Webb, Seth Schwanke
-
