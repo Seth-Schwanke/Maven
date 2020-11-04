@@ -28,4 +28,7 @@ Project
 
 Docker:
 how to build docker image
+docker build -t myapp .
+
 run image as container
+docker run -it --name=myapp -p 8080 myapp
