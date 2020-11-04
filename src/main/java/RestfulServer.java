@@ -25,7 +25,7 @@ public class RestfulServer{
     }
 
     String Logger(Request request, Response response){
-        response.type("/json"); //set response type to json
+        response.type("application/json"); //set response type to json
         response.header("Access-Control-Allow-Origin", "*"); //set header
         response.status(200); //set status code
 
@@ -38,6 +38,7 @@ public class RestfulServer{
         response.type("application/json"); //set response type
         response.header("Access-Control-Allow-Origin", "*"); //set header
         response.status(200); //set status code
+
         return HttpRequestToJson(request); //return request after it has gone through httprequest
     }
 
@@ -67,11 +68,8 @@ public class RestfulServer{
                 + "}";
     }
 
-
-
     public static void main(String[] programArgs){
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
-
     }
 
 }
