@@ -16,6 +16,9 @@ RestfulServer.class: Logs the answer.
 
 If this project is used in a containerized smart home system, multiple smart devices and products could be used in conjunction, with minimal effect on one another.  
 
+Creating the Package (Only do this if you want to):
+
+
 Usage:
 java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
 
