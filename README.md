@@ -17,13 +17,8 @@ RestfulServer.class: Logs the answer.
 If this project is used in a containerized smart home system, multiple smart devices and products could be used in conjunction, with minimal effect on one another.  
 
 Usage:
-javac ./java
-javac RestfulServer.java
-java RestfulServer
+java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
 
-
-How to build and run...
-Webserver
 Project
 
 Docker:
