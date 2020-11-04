@@ -1,4 +1,4 @@
-# --- Author: Michael Webb,
+# --- Author: Michael Webb, Jake Mismas
 FROM maven:latest AS base
 
 RUN mkdir -p /code

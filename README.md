@@ -16,8 +16,13 @@ RestfulServer.class: Logs the answer.
 
 If this project is used in a containerized smart home system, multiple smart devices and products could be used in conjunction, with minimal effect on one another.  
 
+NOTE : We implemented a POST route.
+
 Creating the Package (Only do this if you want to):
 
+docker rm maven-project
+docker build -t maven-project .
+docker run -it --name=maven-project -p 8080:8080 maven-test
 
 Usage:
 java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
