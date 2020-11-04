@@ -18,20 +18,10 @@ If this project is used in a containerized smart home system, multiple smart dev
 
 NOTE : We implemented a POST route.
 
-Creating the Package (Only do this if you want to):
-
+Docker: 
 docker rm maven-project
 docker build -t maven-project .
 docker run -it --name=maven-project -p 8080:8080 maven-test
 
 Usage:
 java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
-
-Project
-
-Docker:
-how to build docker image
-docker build -t myapp .
-
-run image as container
-docker run -it --name=myapp -p 8080 myapp
