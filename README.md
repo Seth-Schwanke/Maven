@@ -17,6 +17,10 @@ RestfulServer.class: Logs the answer.
 If this project is used in a containerized smart home system, multiple smart devices and products could be used in conjunction, with minimal effect on one another.  
 
 Usage:
+javac ./java
+javac RestfulServer.java
+java RestfulServer
+
 
 How to build and run...
 Webserver
