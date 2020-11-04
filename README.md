@@ -18,6 +18,8 @@ If this project is used in a containerized smart home system, multiple smart dev
 
 NOTE : We implemented a POST route.
 
+Run the script (run.sh) with: 
+
 Docker: (THIS IS INCLUDED IN run.sh AND ONLY PASTED HERE FOR REDUNDANCY)
 docker rm maven-project
 docker build -t maven-project .
