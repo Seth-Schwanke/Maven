@@ -18,12 +18,12 @@ If this project is used in a containerized smart home system, multiple smart dev
 
 NOTE : We implemented a POST route.
 
-Run the script (run.sh) with: 
-
 Docker: (THIS IS INCLUDED IN run.sh AND ONLY PASTED HERE FOR REDUNDANCY)
 docker rm maven-project
 docker build -t maven-project .
 docker run -it --name=maven-project -p 8080:8080 maven-test
+Run the script (run.sh) with:
+./run.sh 
 
 Usage:
 java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
