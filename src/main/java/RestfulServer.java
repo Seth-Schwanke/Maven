@@ -19,18 +19,19 @@ public class RestfulServer{
 
     private void processRestfulApiRequests(){
         Spark.get("/", this::echoRequest);
-        Spark.post("/", this::echoRequest);//use this for sending things back
-        Spark.post("/", this::testerino);
+        //Spark.post("/", this::echoRequest);//use this for sending things back
+        Spark.post("/", this::Logger);
         //use above to print out body
     }
-    String testerino(Request request, Response response){
+
+    String Logger(Request request, Response response){
         response.type("/json");
         response.header("Access-Control-Allow-Origin", "*");
         response.status(200);
-        return testest(request);
-    }
-    private String testest(Request request){
-        return editBody(request.body());
+
+        System.out.println(request.body());
+
+        return (request.body());
     }
 
      String echoRequest(Request request, Response response){
@@ -66,9 +67,7 @@ public class RestfulServer{
                 + "}";
     }
 
-    public String editBody(String body) {
-        return new StringBuilder(body).reverse().toString();
-    }
+
 
     public static void main(String[] programArgs){
         RestfulServer restfulServer= new RestfulServer();
