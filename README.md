@@ -27,3 +27,9 @@ Run the script (run.sh) with:
 
 Usage:
 java -cp target/CS370MavenProject-1.0-SNAPSHOT-jar-with-dependencies.jar RestfulServer
+
+Things we need to do:
+1. integrate google sdk library into project 
+2. conditional if convert audio to text and vice versa
+3. Write method to print and store history of asked questions
+4. finish up paper
