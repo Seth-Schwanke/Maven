@@ -72,4 +72,11 @@ public class RestfulServer{
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
     }
 
+    class Reciever {
+        Reciever() {
+            //Get String
+
+        }
+    }
+
 }
