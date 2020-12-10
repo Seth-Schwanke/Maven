@@ -34,7 +34,10 @@ public class RestfulServer{
         String requestBody = request.body();
 
         // Send requestBody to Receiver here
-        Receiver(requestBody);
+        String answer = Receiver(requestBody);
+
+        System.out.println(answer);
+
         return (request.body()); //return body
     }
 
@@ -85,7 +88,7 @@ public class RestfulServer{
 
             // Since Question has already been asked and we have the answer,
             // return answer to restful server class where it will be updated
-
+            answer = "HELLO WORLD";
             // If question has NOT been answered yet (HOQ returns an empty string)
 
             // Send question to Google Assistant Container for answer
