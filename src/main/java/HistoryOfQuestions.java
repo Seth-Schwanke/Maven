@@ -1,9 +1,22 @@
-public class HistoryOfQuestions {
+import java.util.ArrayList;
+public class HistoryOfQuestions extends RestfulServer {
+    public static void main(String[] args) {
     // Get String Question
+    String test = "test";
+    ArrayList<String> HQ = new ArrayList<String>();
 
-    // Check if already been asked
+    // Check if question has already been asked
+    // If yes return string to RestfulServer
+    // If no add to arraylist
+     if(HQ.contains(test)) {
+        System.out.println("Has already been asked");
+        // Return previous Answer
 
-    // Put into arraylist
+    }else{
+        HQ.add(test);
+    }
 
-    // Display arraylist
+    }
 }
+
+
