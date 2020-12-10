@@ -77,28 +77,23 @@ public class RestfulServer{
     }
 
     String Receiver(String question) {
-        //Get String
 
-        // Check if a question (does it end with a question mark?)
+        if(question.endsWith("?")) { // Check if a question (does it end with a question mark?)
+            String answer;
+            // check if question has already been asked before by sending string to HOQ
+            // If question has already been asked, HOQ will return a string...
 
-        // If so...
+            // Since Question has already been asked and we have the answer,
+            // return answer to restful server class where it will be updated
 
-        // check if question has already been asked before by sending string to HOQ
-        // If question has already been asked, HOQ will return a string...
+            // If question has NOT been answered yet (HOQ returns an empty string)
 
-        // Since Question has already been asked and we have the answer,
-        // return answer to restful server class where it will be updated
+            // Send question to Google Assistant Container for answer
 
-        // If question has NOT been answered yet (HOQ returns an empty string)
-
-        // Send question to Google Assistant Container for answer
-
-        // return answer to restful server class where it will be updated.
-
-        // else...
-
-        // return string error to restfulserver class that describes the issue
-
-        return question;
+            // return answer to restful server class where it will be updated.
+            return answer;
+        } else { // return string error to restfulserver class that describes the issue
+            return "[ERROR] Invalid string entered, please make sure it ends with a '?'";
+        }
     }
 }
