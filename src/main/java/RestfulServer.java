@@ -76,33 +76,29 @@ public class RestfulServer{
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
     }
 
-    class Reciever {
-        Reciever() {
-            //Get String
+    String Receiver(String question) {
+        //Get String
 
-            // Check if a question (does it end with a question mark?)
+        // Check if a question (does it end with a question mark?)
 
-                // If so...
+        // If so...
 
-                        // check if question has already been asked before by sending string to HOQ
-                        // If question has already been asked, HOQ will return a string...
+        // check if question has already been asked before by sending string to HOQ
+        // If question has already been asked, HOQ will return a string...
 
-                                // Since Question has already been asked and we have the answer,
-                                // return answer to restful server class where it will be updated
+        // Since Question has already been asked and we have the answer,
+        // return answer to restful server class where it will be updated
 
-                        // If question has NOT been answered yet (HOQ returns an empty string)
+        // If question has NOT been answered yet (HOQ returns an empty string)
 
-                                // Send question to Google Assistant Container for answer
+        // Send question to Google Assistant Container for answer
 
-                                // return answer to restful server class where it will be updated.
+        // return answer to restful server class where it will be updated.
 
-                // else...
+        // else...
 
-                        // return string error to restfulserver class that describes the issue
+        // return string error to restfulserver class that describes the issue
 
-
-
-        }
+        return question;
     }
-
 }
