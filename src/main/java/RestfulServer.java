@@ -24,12 +24,16 @@ public class RestfulServer{
         //use above to print out body
     }
 
-    String Logger(Request request, Response response){
+    String Logger(Request request, Response response) {
         response.type("application/json"); //set response type to json
         response.header("Access-Control-Allow-Origin", "*"); //set header
         response.status(200); //set status code
 
         System.out.println(request.body()); //print out body
+
+        String requestBody = request.body();
+
+        // Send requestBody to Receiver here
 
         return (request.body()); //return body
     }
