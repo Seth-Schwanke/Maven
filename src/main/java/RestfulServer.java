@@ -80,6 +80,28 @@ public class RestfulServer{
         Reciever() {
             //Get String
 
+            // Check if a question (does it end with a question mark?)
+
+                // If so...
+
+                        // check if question has already been asked before by sending string to HOQ
+                        // If question has already been asked, HOQ will return a string...
+
+                                // Since Question has already been asked and we have the answer,
+                                // return answer to restful server class where it will be updated
+
+                        // If question has NOT been answered yet (HOQ returns an empty string)
+
+                                // Send question to Google Assistant Container for answer
+
+                                // return answer to restful server class where it will be updated.
+
+                // else...
+
+                        // return string error to restfulserver class that describes the issue
+
+
+
         }
     }
 
