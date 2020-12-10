@@ -79,19 +79,20 @@ public class RestfulServer{
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
     }
 
-    String Receiver(@org.jetbrains.annotations.NotNull String question) {
+    String Receiver(String question) {
 
         if(question.endsWith("?")) { // Check if a question (does it end with a question mark?)
             String answer;
             // check if question has already been asked before by sending string to HOQ
-            // If question has already been asked, HOQ will return a string...
+            // If question has already been asked, HOQ will return a string..
             answer = "HELLO WORLD";
             //answer = new HistoryOfQuestions(question);
-            if(answer != null)  {
+            if(answer.equals(null))  {
+
                 return(answer);
             } else {
                 // Call GOOGLEASSISTANT CLASS here and set its returned answer to answer var
-
+                answer = "GOOGLE ASSISTANT RESPONSE HERE.";
                 return answer;
             }
         } else { // return string error to restfulserver class that describes the issue
