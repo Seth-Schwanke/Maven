@@ -1,7 +1,17 @@
+import javax.lang.model.type.ArrayType;
 import java.util.ArrayList;
 public class HistoryOfQuestions extends RestfulServer {
     public static void main(String[] args) {
-    // Get String Question
+
+        String question = ""; //store question into string
+        ArrayList<String> q = new ArrayList<>(); //arraylists of strings to hold questions
+        if(question == "!History"){ //check if it is asking for the history
+            read(q); //read out history
+        }
+        else { //question needs to be added to arraylist
+            q = adder(q, question);//add it
+        }
+    /*// Get String Question
     String test = "test";
     ArrayList<String> ASKED = new ArrayList<String>();
     ArrayList<String> ANSWERED = new ArrayList<String>();
@@ -16,6 +26,17 @@ public class HistoryOfQuestions extends RestfulServer {
     }else{
          ASKED.add(test);
     }
+
+    */}
+    public static ArrayList<String> adder(ArrayList<String> arr, String toBe){
+        arr.add(toBe);
+        return arr;
+    }
+
+    public static void read(ArrayList<String> storage){
+        for (String s : storage) {
+            System.out.println(s);
+        }
 
     }
 }
