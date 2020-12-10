@@ -79,24 +79,23 @@ public class RestfulServer{
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
     }
 
-    String Receiver(String question) {
+    String Receiver(@org.jetbrains.annotations.NotNull String question) {
 
         if(question.endsWith("?")) { // Check if a question (does it end with a question mark?)
             String answer;
             // check if question has already been asked before by sending string to HOQ
             // If question has already been asked, HOQ will return a string...
-
-            // Since Question has already been asked and we have the answer,
-            // return answer to restful server class where it will be updated
             answer = "HELLO WORLD";
-            // If question has NOT been answered yet (HOQ returns an empty string)
+            //answer = new HistoryOfQuestions(question);
+            if(answer != null)  {
+                return(answer);
+            } else {
+                // Call GOOGLEASSISTANT CLASS here and set its returned answer to answer var
 
-            // Send question to Google Assistant Container for answer
-
-            // return answer to restful server class where it will be updated.
-            return answer;
+                return answer;
+            }
         } else { // return string error to restfulserver class that describes the issue
-            return "[ERROR] Invalid string entered, please make sure it ends with a '?'";
+            return "ERROR- Invalid string entered, please make sure it ends with a '?'";
         }
     }
 }
