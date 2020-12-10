@@ -9,7 +9,7 @@ public class HistoryOfQuestions extends RestfulServer {
             read(q); //read out history
         }
         else { //question needs to be added to arraylist
-            q = adder(q, question);//add it
+            q.add(question);//add it
         }
     /*// Get String Question
     String test = "test";
@@ -28,11 +28,6 @@ public class HistoryOfQuestions extends RestfulServer {
     }
 
     */}
-    public static ArrayList<String> adder(ArrayList<String> arr, String toBe){
-        arr.add(toBe);
-        return arr;
-    }
-
     public static void read(ArrayList<String> storage){
         for (String s : storage) {
             System.out.println(s);
