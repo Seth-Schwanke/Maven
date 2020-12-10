@@ -34,7 +34,7 @@ public class RestfulServer{
         String requestBody = request.body();
 
         // Send requestBody to Receiver here
-
+        Receiver(requestBody);
         return (request.body()); //return body
     }
 
