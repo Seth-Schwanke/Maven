@@ -38,7 +38,7 @@ public class RestfulServer{
 
         System.out.println(answer);
 
-        return (request.body()); //return body
+        return (answer); //return body
     }
 
     String echoRequest(Request request, Response response){
