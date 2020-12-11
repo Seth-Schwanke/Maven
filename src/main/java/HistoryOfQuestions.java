@@ -27,7 +27,9 @@ public class HistoryOfQuestions {
             tmpo = "today is the 11th of december";
             return tmpo;
         }
-
+        else if(qstn.equals("!history")){
+            return read(q, Answer);
+        }
         else{
             tmpo = "NULL";
             return tmpo;
