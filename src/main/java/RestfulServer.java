@@ -83,14 +83,18 @@ public class RestfulServer{
 
     String Receiver(String currentQuestion) {
 
+
+        if(currentQuestion.equals("!history")){
+            return HOQ.read(HOQ.q, HOQ.Answer);
+        }
+
         HOQ.question = currentQuestion;
+
+
         String rtrnAnsw = HOQ.store(currentQuestion);
 
-        if(rtrnAnsw.equals("NULL")){
-            return("Invalid String entered!");
-        }
-        else if(rtrnAnsw.equals("!history")){
-            return HOQ.read(HOQ.q, HOQ.Answer);
+        if(rtrnAnsw.equals("NULL")) {
+            return ("Invalid String entered!");
         }
         else {
             return(rtrnAnsw);

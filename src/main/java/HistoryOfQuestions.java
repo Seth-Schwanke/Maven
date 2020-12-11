@@ -28,15 +28,12 @@ public class HistoryOfQuestions {
             tmpo = "today is the 11th of december";
             return tmpo;
         }
-        else if(qstn.equals("!history")){
-            tmpo = "!history";
-            return tmpo;
-        }
         else{
-            tmpo = "NULL";
+            tmpo = "GOOGLE ASSISTANT ANSWER HERE";
             return tmpo;
         }
     }
+
     public String read(ArrayList<String> storage, ArrayList<String> answers) {
        String tempBOI = "";
         for(int i = 0; i < storage.size(); i++){
