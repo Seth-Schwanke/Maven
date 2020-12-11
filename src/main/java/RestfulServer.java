@@ -79,10 +79,24 @@ public class RestfulServer{
         RestfulServer restfulServer= new RestfulServer(); //create new restful server
     }
 
-    String Receiver(String question) {
+    String Receiver(String currentQuestion) {
 
         HistoryOfQuestions HOQ = new HistoryOfQuestions();
+        HOQ.question = currentQuestion;
+        String rtrnAnsw = HOQ.store(currentQuestion);
+        if(currentQuestion.equals("!history")){
+            return(HOQ.read(HOQ.q, HOQ.Answer));
+        }
+        else if(rtrnAnsw.equals("NULL")){
+            return("Invalid String entered!");
+        }
+        else {
+            return(rtrnAnsw);
+        }
 
+
+
+        /*
         if(question.endsWith("?")) { // Check if a question (does it end with a question mark?)
             String answer;
 
@@ -99,6 +113,6 @@ public class RestfulServer{
             return HOQ.read();
         } else { // return string error to restfulserver class that describes the issue
             return "ERROR- Invalid string entered, please make sure it ends with a '?'";
-        }
+        }*/
     }
 }
