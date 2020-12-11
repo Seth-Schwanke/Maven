@@ -14,6 +14,7 @@ public class HistoryOfQuestions {
         Answer.add(temp2);
         return temp2;
     }
+
     public String answer(String qstn, String tmpo){
         if(qstn.equals("what is the weather like today?")){
             tmpo = "It is 25 degrees outside with a 30% chance of snow";

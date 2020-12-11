@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 public class RestfulServer{
     private final Logger log = LoggerFactory.getLogger(RestfulServer.class); //setting up log
 
+    public HistoryOfQuestions HOQ = new HistoryOfQuestions();
+
     public RestfulServer(){
         this.configureRestfulApiServer();
         this.processRestfulApiRequests();
@@ -81,7 +83,6 @@ public class RestfulServer{
 
     String Receiver(String currentQuestion) {
 
-        HistoryOfQuestions HOQ = new HistoryOfQuestions();
         HOQ.question = currentQuestion;
         String rtrnAnsw = HOQ.store(currentQuestion);
         if(currentQuestion.equals("!history")){
