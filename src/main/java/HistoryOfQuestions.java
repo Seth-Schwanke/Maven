@@ -1,23 +1,38 @@
 import javax.lang.model.type.ArrayType;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-public class HistoryOfQuestions extends RestfulServer {
-    public static void main(String[] args) {
+public class HistoryOfQuestions {
 
-        String question = ""; //store question into string
-        ArrayList<String> q = new ArrayList<>(); //arraylists of strings to hold questions
-        ArrayList<String> Answer = new ArrayList<>();
-        if(question == "!History"){ //check if it is asking for the history
-            read(q); //read out history
+    String question; //store question into string
+    ArrayList<String> q = new ArrayList<>(); //arraylists of strings to hold questions
+    ArrayList<String> Answer = new ArrayList<>();
+
+    public String store(String quest){
+        q.add(quest);
+        String temp = "";
+        String temp2 = answer(quest, temp);
+        Answer.add(temp2);
+        return temp2;
+    }
+    public String answer(String qstn, String tmpo){
+        if(qstn.equals("what is the weather like today?")){
+            tmpo = "It is 25 degrees outside with a 30% chance of snow";
+            return tmpo;
         }
-        //else if(question == "what is the weather outside?"){
-        // return "it is 25 degrees outside with a 30% chance of snow";
-        //}
-        else { //question needs to be added to arraylist
-            q.add(question);//add it
+        else if(qstn.equals("how many states are there?")){
+            tmpo = "There are 50 states in the United States";
+            return tmpo;
+        }
+        else if(qstn.equals("what is todays date?")){
+            tmpo = "today is the 11th of december";
+            return tmpo;
+        }
+        else{
+            tmpo = "NULL";
+            return tmpo;
         }
     }
-    public static void read(ArrayList<String> storage){
+    public static void read(ArrayList<String> storage) {
         for (String s : storage) {
             System.out.println(s);
         }
