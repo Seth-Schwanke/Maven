@@ -81,20 +81,22 @@ public class RestfulServer{
 
     String Receiver(String question) {
 
+        HistoryOfQuestions HOQ = new HistoryOfQuestions();
+
         if(question.endsWith("?")) { // Check if a question (does it end with a question mark?)
             String answer;
-            // check if question has already been asked before by sending string to HOQ
-            // If question has already been asked, HOQ will return a string..
-            answer = "HELLO WORLD";
-            //answer = new HistoryOfQuestions(question);
-            if(answer.equals(null))  {
 
+
+
+            if(answer.equals(null))  {
                 return(answer);
             } else {
-                // Call GOOGLEASSISTANT CLASS here and set its returned answer to answer var
-                answer = "GOOGLE ASSISTANT RESPONSE HERE.";
+                answer= HOQ.store(question);
+
                 return answer;
             }
+        } else if(question.equals("!history")) {
+            return HOQ.read();
         } else { // return string error to restfulserver class that describes the issue
             return "ERROR- Invalid string entered, please make sure it ends with a '?'";
         }
