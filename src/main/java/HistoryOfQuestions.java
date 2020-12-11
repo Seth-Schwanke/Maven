@@ -29,7 +29,8 @@ public class HistoryOfQuestions {
             return tmpo;
         }
         else if(qstn.equals("!history")){
-            return read(q, Answer);
+            tmpo = "!history";
+            return tmpo;
         }
         else{
             tmpo = "NULL";
